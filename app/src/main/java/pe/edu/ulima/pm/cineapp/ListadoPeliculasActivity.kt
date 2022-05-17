@@ -2,10 +2,14 @@ package pe.edu.ulima.pm.cineapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Layout
 import android.util.Log
+import android.view.View
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
@@ -26,14 +30,16 @@ class ListadoPeliculasActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_listado_peliculas)
 
-
-
         mDlaListaPeliculas = findViewById(R.id.dlaListaPeliculas)
         mNviListaPeliculas = findViewById(R.id.nviListaPeliculas)
 
 
+        val header : View = mNviListaPeliculas.getHeaderView(0)
+        val eteNombre : TextView = header.findViewById(R.id.eteNombre)
+        eteNombre.text = "${intent.getStringExtra("nameUser")}"
+
         mNviListaPeliculas.setNavigationItemSelectedListener {
-            it.setChecked(true)
+            it.isChecked=true
 
             val ft = supportFragmentManager.beginTransaction()
 

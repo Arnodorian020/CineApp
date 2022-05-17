@@ -12,7 +12,6 @@ import org.w3c.dom.Text
 class MainActivity : AppCompatActivity() {
     //Se crea una variabla de tipo TextInput
     var tietNameUser: TextInputEditText? = null
-    var mTviNombre : TextView? = null
 
     //Se crea una variable de tipo button
     var btnLogin: Button? = null
@@ -28,12 +27,15 @@ class MainActivity : AppCompatActivity() {
         btnLogin = findViewById(R.id.btnLogin)
 
         btnLogin!!.setOnClickListener{
-            val intent= Intent(this, ListadoPeliculasActivity::class.java)
+            val intent= Intent()
+            intent.setClass(this, ListadoPeliculasActivity::class.java)
+
             //Se crea una variable para almacenar el nombre del usuario
             val nameUser = Bundle()
+
             //nameUser.putString("nameUser",tietNameUser!!.text.toString())
-            intent.putExtra("nameUser", tietNameUser!!.text.toString())
-            setResult(RESULT_OK, intent)
+            nameUser.putString("nameUser", tietNameUser!!.text.toString())
+            intent.putExtras(nameUser)
             startActivity(intent)
         }
 
