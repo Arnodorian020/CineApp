@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp">
 
+    <TextView
+        android:id="@+id/datosBachmaster"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bruno Andre Chirinos Molina (20162974)"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/datosArnodorian020"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jean Pierre Soto Tipacti (20191946)"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/datosBachmaster"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datosDogeFox071101" />
+
+    <TextView
+        android:id="@+id/datosDogeFox071101"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Leonardo Guillermo Falcón Choque (20190702)"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datosBachmaster"
+        android:paddingBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
