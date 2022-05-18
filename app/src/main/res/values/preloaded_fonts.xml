@@ -3,5 +3,6 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/actor</item>
         <item>@font/baloo_tamma</item>
+        <item>@font/charmonman_bold</item>
     </array>
 </resources>
