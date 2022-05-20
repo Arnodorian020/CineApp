@@ -3,11 +3,8 @@ package pe.edu.ulima.pm.cineapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
-import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
     //Se crea una variabla de tipo TextInput

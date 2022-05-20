@@ -5,18 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toolbar
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.google.android.material.navigation.NavigationView
 import pe.edu.ulima.pm.cineapp.R
 
 class NosotrosFragment : Fragment() {
     private lateinit var mNviListaPeliculas : NavigationView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        activity?.title = "Sobre Nosotros"
-    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,7 +24,6 @@ class NosotrosFragment : Fragment() {
             val ft = requireActivity().supportFragmentManager
             ft.popBackStack()
 
-            //ft.replace(R.id.fcvEleccion, CarteleraFragment())
         }
         return v
     }
