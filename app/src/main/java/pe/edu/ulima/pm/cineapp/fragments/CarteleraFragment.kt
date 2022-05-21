@@ -44,8 +44,21 @@ class CarteleraFragment : Fragment() {
 
         val listaPlanetas : List<Pelicula> = GestorPeliculas().obtenerPeliculas()
         val adapter = ListadoPeliculasAdapter(listaPlanetas) {
-            Log.i("PeliculasFragment",
-                "Se hizo click en la pelicula " + it.nombre)
+            Log.i("PeliculasFragment","Se hizo click en la pelicula " + it.nombre)
+
+            val argumentos = Bundle()
+            argumentos.putString("titulo",it.nombre)
+            argumentos.putInt("imagen", it.img)
+            argumentos.putString("descripcion", it.resena)
+
+            val peliculaFragment = PeliculaFragmment()
+            peliculaFragment.arguments = argumentos
+
+            val ft = requireActivity().supportFragmentManager.beginTransaction()
+            ft.replace(R.id.fcvEleccion, peliculaFragment)
+            ft.addToBackStack(null)
+            ft.commit()
+
         }
         mRviPeliculas.adapter = adapter
     }
