@@ -32,22 +32,21 @@
         android:layout_marginBottom="32dp"
         android:fontFamily="@font/actor"
         android:text="@string/ingrese_su_nombre"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tietNameUser"
         app:layout_constraintStart_toStartOf="@+id/tietNameUser"
-        tools:text="Ingrese su nombre:"
-        android:textColor="@color/white"/>
+        tools:text="Ingrese su nombre:" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tietNameUser"
-        android:backgroundTint="@color/white"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="#32F6F6F6"
         android:elegantTextHeight="true"
         android:inputType="textPersonName|text"
         android:minHeight="48dp"
         android:textAlignment="center"
-        android:background="#11FFFFFF"
         android:textColor="@color/white"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
@@ -59,7 +58,6 @@
     <!--boton redondeado-->
     <Button
         android:id="@+id/btnLogin"
-        app:cornerRadius="32dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -68,6 +66,7 @@
         android:text="@string/login"
         android:textSize="16sp"
         app:backgroundTint="#184378"
+        app:cornerRadius="32dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

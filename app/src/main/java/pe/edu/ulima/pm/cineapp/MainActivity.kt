@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import pe.edu.ulima.pm.cineapp.fragments.CarteleraFragment
 
+
 class MainActivity : AppCompatActivity() {
     //Se crea una variabla de tipo TextInput
     var tietNameUser: TextInputEditText? = null
@@ -14,7 +15,6 @@ class MainActivity : AppCompatActivity() {
     //Se crea una variable de tipo button
     var btnLogin: Button? = null
 
-    var numFragmento = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

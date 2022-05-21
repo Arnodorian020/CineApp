@@ -2,15 +2,12 @@ package pe.edu.ulima.pm.cineapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
-import android.util.Log
 import android.view.View
-import android.widget.EditText
-import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.isVisible
+
+import androidx.core.view.get
+
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
@@ -21,9 +18,8 @@ class ListadoPeliculasActivity : AppCompatActivity() {
     private lateinit var mDlaListaPeliculas : DrawerLayout
     private lateinit var mNviListaPeliculas : NavigationView
 
-
-
     private var toolbar : Toolbar? = null
+
 
     private val fragmentCartelera = CarteleraFragment()
     private val fragmentNosotros = NosotrosFragment()
@@ -31,16 +27,15 @@ class ListadoPeliculasActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_listado_peliculas)
 
         mDlaListaPeliculas = findViewById(R.id.dlaListaPeliculas)
         mNviListaPeliculas = findViewById(R.id.nviListaPeliculas)
 
-
+        val nameUser="${intent.getStringExtra("nameUser")}".replaceFirstChar {it.uppercase() }
         val header : View = mNviListaPeliculas.getHeaderView(0)
         val eteNombre : TextView = header.findViewById(R.id.eteNombre)
-        eteNombre.text = "${intent.getStringExtra("nameUser")}"
+        eteNombre.text = nameUser
 
 
         mNviListaPeliculas.setNavigationItemSelectedListener {
@@ -50,19 +45,19 @@ class ListadoPeliculasActivity : AppCompatActivity() {
 
 
             when(it.itemId) {
-                R.id.menCartelera -> mostrarFragmentCartelera(ft)
+                R.id.menCartelera ->{
+                    mostrarFragmentCartelera(ft)
+                }
                 R.id.menNosotros -> mostrarFragmentNosotros(ft)
             }
+
 
             ft.addToBackStack(null)
 
             ft.commit()
 
-
             mDlaListaPeliculas.closeDrawers()
             true
-
-
         }
 
 
@@ -76,10 +71,10 @@ class ListadoPeliculasActivity : AppCompatActivity() {
         // Configurando toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
+        //Se deja checkeado el primer item de la lista de navegación
+        mNviListaPeliculas.menu[0].isChecked = true
+
     }
-
-
-
 
     private fun mostrarFragmentNosotros(ft: FragmentTransaction) {
         ft.replace(R.id.fcvEleccion, fragmentNosotros)
