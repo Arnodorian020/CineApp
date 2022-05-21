@@ -3,6 +3,7 @@ package pe.edu.ulima.pm.cineapp.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.ulima.pm.cineapp.Pelicula
@@ -14,10 +15,13 @@ class ListadoPeliculasAdapter(private val mListPeliculas : List<Pelicula>,
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         val tviPeliculaNombre : TextView
         val tviPeliculaHora : TextView
+        val ivPelicula:ImageView
 
         init {
             tviPeliculaNombre = view.findViewById(R.id.tviPeliculaNombre)
             tviPeliculaHora = view.findViewById(R.id.tviPeliculaHora)
+            ivPelicula= view.findViewById(R.id.ivPelicula)
+
         }
     }
 
@@ -31,9 +35,9 @@ class ListadoPeliculasAdapter(private val mListPeliculas : List<Pelicula>,
         val pelicula = mListPeliculas[position]
         holder.tviPeliculaNombre.text = pelicula.nombre
         holder.tviPeliculaHora.text = pelicula.hora
+        holder.ivPelicula.setImageResource(pelicula.img)
 
         holder.itemView.setOnClickListener {
-            // Devolver el nro de items a mostrar
             mOnItemClickListener(pelicula)
         }
     }

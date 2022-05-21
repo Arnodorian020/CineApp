@@ -13,11 +13,11 @@
         android:text="Nombre_Pelicula"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toEndOf="@+id/ivPelicula"
+        app:layout_constraintTop_toTopOf="@+id/ivPelicula" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ivPelicula"
         android:layout_width="80dp"
         android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hora_Pelicula"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPelicula"
         app:layout_constraintEnd_toEndOf="@+id/tviPeliculaNombre"
         app:layout_constraintStart_toStartOf="@+id/tviPeliculaNombre"
         app:layout_constraintTop_toBottomOf="@+id/tviPeliculaNombre" />
