@@ -10,7 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/bg_moon2" />
+        android:src="@drawable/bg_moon4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvTitleApp"
@@ -32,7 +35,9 @@
         android:layout_marginBottom="32dp"
         android:fontFamily="@font/actor"
         android:text="@string/ingrese_su_nombre"
+        android:textStyle="bold"
         android:textColor="@color/white"
+        android:background="#996A6A6A"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tietNameUser"
         app:layout_constraintStart_toStartOf="@+id/tietNameUser"
@@ -42,7 +47,7 @@
         android:id="@+id/tietNameUser"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#32F6F6F6"
+        android:background="#996A6A6A"
         android:elegantTextHeight="true"
         android:inputType="textPersonName|text"
         android:minHeight="48dp"

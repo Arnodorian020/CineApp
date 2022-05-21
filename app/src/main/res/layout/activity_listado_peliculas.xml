@@ -17,15 +17,20 @@
             android:layout_height="?attr/actionBarSize"
             android:id="@+id/toolbar"
             android:elevation="4dp"
-            android:background="#AA99FF"
-            />
+            android:background="#184378"
+            app:titleTextColor="@color/white"
+            >
+        </androidx.appcompat.widget.Toolbar>
+
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fcvEleccion"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
+
     </LinearLayout>
 
+    <!--menu hamburguesa color verde-->
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nviListaPeliculas"
@@ -34,6 +39,7 @@
         app:menu="@menu/menu_navegacion"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/drawer_header"
-        android:layout_gravity="start"/>
+        android:layout_gravity="start">
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
