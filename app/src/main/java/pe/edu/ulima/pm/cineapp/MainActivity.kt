@@ -1,13 +1,11 @@
 package pe.edu.ulima.pm.cineapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
-import org.w3c.dom.Text
+import pe.edu.ulima.pm.cineapp.fragments.CarteleraFragment
 
 class MainActivity : AppCompatActivity() {
     //Se crea una variabla de tipo TextInput
@@ -15,6 +13,8 @@ class MainActivity : AppCompatActivity() {
 
     //Se crea una variable de tipo button
     var btnLogin: Button? = null
+
+    var numFragmento = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +36,11 @@ class MainActivity : AppCompatActivity() {
             //nameUser.putString("nameUser",tietNameUser!!.text.toString())
             nameUser.putString("nameUser", tietNameUser!!.text.toString())
             intent.putExtras(nameUser)
+
+            nameUser.putString("nombre", tietNameUser!!.text.toString())
+            val fragmento = CarteleraFragment()
+            fragmento.arguments = nameUser
+
             startActivity(intent)
         }
 

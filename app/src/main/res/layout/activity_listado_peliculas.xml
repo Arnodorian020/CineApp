@@ -12,6 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/toolbar"
+            android:elevation="4dp"
+            android:background="#AA99FF"
+            />
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fcvEleccion"
             android:layout_width="match_parent"

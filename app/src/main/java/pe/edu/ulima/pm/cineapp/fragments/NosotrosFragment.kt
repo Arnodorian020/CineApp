@@ -8,6 +8,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.navigation.NavigationView
+import pe.edu.ulima.pm.cineapp.ListadoPeliculasActivity
 import pe.edu.ulima.pm.cineapp.R
 
 class NosotrosFragment : Fragment() {
@@ -27,8 +28,8 @@ class NosotrosFragment : Fragment() {
         btn?.setOnClickListener {
             val ft = requireActivity().supportFragmentManager
             ft.popBackStack()
-
             //ft.replace(R.id.fcvEleccion, CarteleraFragment())
+
         }
         return v
     }

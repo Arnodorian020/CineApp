@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentTransaction
@@ -22,8 +23,11 @@ class ListadoPeliculasActivity : AppCompatActivity() {
 
 
 
+    private var toolbar : Toolbar? = null
+
     private val fragmentCartelera = CarteleraFragment()
     private val fragmentNosotros = NosotrosFragment()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +41,7 @@ class ListadoPeliculasActivity : AppCompatActivity() {
         val header : View = mNviListaPeliculas.getHeaderView(0)
         val eteNombre : TextView = header.findViewById(R.id.eteNombre)
         eteNombre.text = "${intent.getStringExtra("nameUser")}"
+
 
         mNviListaPeliculas.setNavigationItemSelectedListener {
             it.isChecked=true
@@ -63,8 +68,14 @@ class ListadoPeliculasActivity : AppCompatActivity() {
 
         // Aquí se ubica el fragment a mostrar por defecto
         val ft = supportFragmentManager.beginTransaction()
-        ft.add(R.id.fcvEleccion, fragmentCartelera)
+        val add = ft.add(R.id.fcvEleccion, fragmentCartelera)
+        toolbar = findViewById(R.id.toolbar)
+        toolbar!!.setTitle("Hola " + "${intent.getStringExtra("nameUser")}")
         ft.commit()
+
+        // Configurando toolbar
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
     }
 
 
@@ -72,10 +83,14 @@ class ListadoPeliculasActivity : AppCompatActivity() {
 
     private fun mostrarFragmentNosotros(ft: FragmentTransaction) {
         ft.replace(R.id.fcvEleccion, fragmentNosotros)
+        toolbar = findViewById(R.id.toolbar)
+        toolbar!!.setTitle("¿Quiénes somos?")
     }
 
     private fun mostrarFragmentCartelera(ft: FragmentTransaction) {
         ft.replace(R.id.fcvEleccion, fragmentCartelera)
+        toolbar = findViewById(R.id.toolbar)
+        toolbar!!.setTitle("Hola " + "${intent.getStringExtra("nameUser")}")
     }
 
 }
