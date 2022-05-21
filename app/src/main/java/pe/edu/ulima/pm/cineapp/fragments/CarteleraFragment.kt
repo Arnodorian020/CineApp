@@ -44,7 +44,8 @@ class CarteleraFragment : Fragment() {
 
         val listaPlanetas : List<Pelicula> = GestorPeliculas().obtenerPeliculas()
         val adapter = ListadoPeliculasAdapter(listaPlanetas) {
-            Log.i("PlanetasFragment","Se hizo click en la pelicula " + it.nombre);
+            Log.i("PeliculasFragment",
+                "Se hizo click en la pelicula " + it.nombre)
         }
         mRviPeliculas.adapter = adapter
     }
