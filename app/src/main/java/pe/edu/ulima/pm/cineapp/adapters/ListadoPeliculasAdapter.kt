@@ -11,7 +11,8 @@ import pe.edu.ulima.pm.cineapp.R
 
 class ListadoPeliculasAdapter(private val mListPeliculas : List<Pelicula>,
                               private val mOnItemClickListener : (pelicula: Pelicula) -> Unit)
-    : RecyclerView.Adapter<ListadoPeliculasAdapter.ViewHolder>(){
+    : RecyclerView.Adapter<ListadoPeliculasAdapter.ViewHolder>()
+{
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         val tviPeliculaNombre : TextView
         val tviPeliculaHora : TextView
