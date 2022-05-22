@@ -35,12 +35,13 @@
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <ScrollView
-        android:layout_width="315dp"
-        android:layout_height="134dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="328dp"
+        android:layout_height="177dp"
+        android:layout_marginBottom="56dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@+id/btnBack2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
