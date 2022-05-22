@@ -34,25 +34,33 @@
         app:layout_constraintTop_toBottomOf="@+id/txtPelicula"
         app:srcCompat="@drawable/ic_launcher_background" />
 
-
-    <TextView
-        android:id="@+id/txtTexto"
-        android:padding="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:justificationMode="inter_word"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent interdum efficitur ante et fringilla. Vestibulum tempor sem a massa semper, at mattis velit finibus. Nunc eget gravida ipsum, a laoreet risus. Quisque eu erat vitae eros suscipit varius at et ex. Sed in pharetra dolor. Fusce accumsan ligula sed felis lobortis, cursus viverra velit porta. Ut tempus vulputate risus, eu tempus libero tristique et. Curabitur suscipit, augue sed malesuada ornare, neque purus tincidunt sapien, id rutrum nunc mauris ac lectus. Donec interdum, odio tristique maximus rhoncus, diam justo ornare odio, vitae aliquet nisl nibh eu dolor. Mauris hendrerit imperdiet ex id vulputate. Maecenas porta eleifend urna, a elementum urna malesuada vel."
-        android:textColor="@color/white"
+    <ScrollView
+        android:layout_width="315dp"
+        android:layout_height="134dp"
+        android:layout_marginBottom="16dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@+id/btnBack2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagenPelicula" />
+        app:layout_constraintStart_toStartOf="parent">
 
+        <TextView
+            android:id="@+id/txtTexto"
+            android:layout_width="wrap_content"
+            android:layout_height="233dp"
+            android:justificationMode="inter_word"
+            android:padding="10dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent interdum efficitur ante et fringilla. Vestibulum tempor sem a massa semper, at mattis velit finibus. Nunc eget gravida ipsum, a laoreet risus. Quisque eu erat vitae eros suscipit varius at et ex. Sed in pharetra dolor. Fusce accumsan ligula sed felis lobortis, cursus viverra velit porta. Ut tempus vulputate risus, eu tempus libero tristique et. Curabitur suscipit, augue sed malesuada ornare, neque purus tincidunt sapien, id rutrum nunc mauris ac lectus. Donec interdum, odio tristique maximus rhoncus, diam justo ornare odio, vitae aliquet nisl nibh eu dolor. Mauris hendrerit imperdiet ex id vulputate. Maecenas porta eleifend urna, a elementum urna malesuada vel."
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/btnBack2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagenPelicula"
+            app:layout_constraintVertical_bias="0.741" />
+    </ScrollView>
 
     <Button
         android:id="@+id/btnBack2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/regresar"
         android:textAllCaps="false"

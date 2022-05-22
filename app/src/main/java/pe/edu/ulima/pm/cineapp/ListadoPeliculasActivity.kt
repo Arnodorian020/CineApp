@@ -37,6 +37,13 @@ class ListadoPeliculasActivity : AppCompatActivity() {
         val eteNombre : TextView = header.findViewById(R.id.eteNombre)
         eteNombre.text = nameUser
 
+        val argumentos = Bundle()
+        argumentos.putString("nombre", nameUser)
+
+        val nosotrosFragment = NosotrosFragment()
+        nosotrosFragment.arguments = argumentos
+
+
 
         mNviListaPeliculas.setNavigationItemSelectedListener {
             it.isChecked=true
@@ -50,7 +57,7 @@ class ListadoPeliculasActivity : AppCompatActivity() {
                 }
                 R.id.menNosotros -> mostrarFragmentNosotros(ft)
             }
-
+8
 
             ft.addToBackStack(null)
 
@@ -65,7 +72,7 @@ class ListadoPeliculasActivity : AppCompatActivity() {
         val ft = supportFragmentManager.beginTransaction()
         val add = ft.add(R.id.fcvEleccion, fragmentCartelera)
         toolbar = findViewById(R.id.toolbar)
-        toolbar!!.setTitle("Hola " + "${intent.getStringExtra("nameUser")}")
+        toolbar!!.title = "Hola $nameUser"
         ft.commit()
 
         // Configurando toolbar
@@ -82,7 +89,7 @@ class ListadoPeliculasActivity : AppCompatActivity() {
         toolbar!!.setTitle("¿Quiénes somos?")
     }
 
-    private fun mostrarFragmentCartelera(ft: FragmentTransaction) {
+    fun mostrarFragmentCartelera(ft: FragmentTransaction) {
         ft.replace(R.id.fcvEleccion, fragmentCartelera)
         toolbar = findViewById(R.id.toolbar)
         toolbar!!.setTitle("Hola " + "${intent.getStringExtra("nameUser")}")
