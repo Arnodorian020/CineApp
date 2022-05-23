@@ -2,6 +2,7 @@ package pe.edu.ulima.pm.cineapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
@@ -37,11 +38,7 @@ class ListadoPeliculasActivity : AppCompatActivity() {
         val eteNombre : TextView = header.findViewById(R.id.eteNombre)
         eteNombre.text = nameUser
 
-        val argumentos = Bundle()
-        argumentos.putString("nombre", nameUser)
 
-        val nosotrosFragment = NosotrosFragment()
-        nosotrosFragment.arguments = argumentos
 
 
 
@@ -84,6 +81,9 @@ class ListadoPeliculasActivity : AppCompatActivity() {
     }
 
     private fun mostrarFragmentNosotros(ft: FragmentTransaction) {
+        val argumentos = Bundle()
+        argumentos.putString("nombre", "Hola ${intent.getStringExtra("nameUser")}")
+        fragmentNosotros.arguments = argumentos
         ft.replace(R.id.fcvEleccion, fragmentNosotros)
         toolbar = findViewById(R.id.toolbar)
         toolbar!!.setTitle("¿Quiénes somos?")

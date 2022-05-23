@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import pe.edu.ulima.pm.cineapp.R
 
 class PeliculaFragmment : Fragment() {
@@ -23,6 +24,7 @@ class PeliculaFragmment : Fragment() {
             imagen = it.getInt("imagen")
             descripcion = it.getString("descripcion")
         }
+        (activity as AppCompatActivity).supportActionBar?.hide()
     }
 
     override fun onCreateView(
@@ -41,6 +43,7 @@ class PeliculaFragmment : Fragment() {
         btn?.setOnClickListener {
             val ft = requireActivity().supportFragmentManager
             ft.popBackStack()
+            (activity as AppCompatActivity).supportActionBar?.show()
         }
         return v
     }
