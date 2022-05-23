@@ -38,10 +38,6 @@ class ListadoPeliculasActivity : AppCompatActivity() {
         val eteNombre : TextView = header.findViewById(R.id.eteNombre)
         eteNombre.text = nameUser
 
-
-
-
-
         mNviListaPeliculas.setNavigationItemSelectedListener {
             it.isChecked=true
 

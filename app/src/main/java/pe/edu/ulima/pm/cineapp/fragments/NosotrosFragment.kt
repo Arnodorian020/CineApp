@@ -16,8 +16,6 @@ import pe.edu.ulima.pm.cineapp.ListadoPeliculasActivity
 import pe.edu.ulima.pm.cineapp.R
 
 class NosotrosFragment : Fragment() {
-    private lateinit var mNviListaPeliculas : NavigationView
-    private lateinit var toolbar : Toolbar
     private var nombre: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +29,7 @@ class NosotrosFragment : Fragment() {
     ): View? {
         val v = inflater.inflate(R.layout.fragment_nosotros, container, false)
         val btn = v.findViewById<Button>(R.id.btnBack)
+        var navbar : NavigationView? = getActivity()?.findViewById(R.id.nviListaPeliculas)
         if(arguments != null){
             nombre = requireArguments().getString("nombre").toString()
         }
@@ -38,6 +37,9 @@ class NosotrosFragment : Fragment() {
             val ft = requireActivity().supportFragmentManager
             ft.popBackStack()
             (activity as AppCompatActivity).supportActionBar?.title = "$nombre"
+            if (navbar != null) {
+                navbar.setCheckedItem(R.id.menCartelera)
+            }
         }
         return v
     }
